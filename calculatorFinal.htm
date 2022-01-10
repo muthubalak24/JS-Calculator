@@ -1,0 +1,157 @@
+﻿     <html>
+     <body>
+
+       <div style="border-style:solid ;background-color:lightblue;width:110px ;height:150px">
+
+	 <input type="text" id="box1" value=""  size="11" style="background-color:lightblue" /><br>
+	 <input type="text" id="box2" value="" size="11"  style="background-color:lightblue" /><br>
+       
+	 <button onclick="myfunction(7)" style="background-color: #008CBA";>7</button>
+	 <button onclick="myfunction(8)" style="background-color: #008CBA";>8</button>
+	 <button onclick="myfunction(9)" style="background-color: #008CBA";>9</button>
+	 <button onclick="operatorfunction('/')" style="background-color: #008CBA";>/</button><br>
+	 <button onclick="myfunction(4)" style="background-color: #008CBA";>4</button>
+	 <button onclick="myfunction(5)" style="background-color: #008CBA";>5</button>
+	 <button onclick="myfunction(6)" style="background-color: #008CBA";>6</button>
+	 <button onclick="operatorfunction('*')" style="background-color: #008CBA";>*</button><br>
+	 <button onclick="myfunction(1)" style="background-color: #008CBA";>1</button>
+	 <button onclick="myfunction(2)" style="background-color: #008CBA";>2</button>
+	 <button onclick="myfunction(3)" style="background-color: #008CBA";>3</button>
+	 <button onclick="operatorfunction('-')" style="background-color: #008CBA";>-</button><br>
+	 <button style="width:50px; background-color: #008CBA" onclick="myfunction(0)" >0</button>
+	 <button onclick="zerofunction()" style="background-color: #008CBA";>C</button>
+	 <button onclick="operatorfunction('+')" style="background-color: #008CBA";>+</button><br>
+	 <button style="width:105px;background-color: #008CBA" onclick="equaltofunction('=')" style="background-color: #008CBA";>=</button>
+
+       </div>
+
+
+	<p id="demo"></p>
+
+	  <input type="text" id="num1"    value=""       /><br>
+	  <input type="text" id="symbol"  value=""       /><br> 			
+	  <input type="text" id="num2"    value=""       />
+
+
+	<script>
+
+
+
+
+		function myfunction(muthu)
+		  {
+		     document.getElementById("box2").value= muthu; 
+		     var b=document.getElementById("num1").value;
+		     if(b==""){
+ 	        		document.getElementById("num1").value=muthu;
+			  }
+
+       		     else{
+                              
+                                document.getElementById("num2").value=muthu;          
+			 	    
+			}
+                   }
+                   
+
+		function operatorfunction(symbol)
+		  {
+                     var o=document.getElementById("symbol").value;
+                     var number9=parseInt(document.getElementById("num2").value);
+                     var number8=parseInt(document.getElementById("num1").value);
+                     var res=number9+number8;
+		     var ressub=number8-number9;
+		     var resmulti=number8*number9;
+		     var resdiv=number8/number9;
+                    
+		     var d=document.getElementById("box1").value + document.getElementById("box2").value + symbol;
+		     
+
+	             document.getElementById("box1").value=d;
+		     
+                     if(symbol=="+"){
+					
+	                       document.getElementById("symbol").value="add";
+                          }
+		     if(o=="add")   {
+				document.getElementById("box2").value=res;
+			  }
+
+			
+                     
+		     if(symbol=="-"){
+					
+	                       document.getElementById("symbol").value="sub";
+                          } 
+		     if(o=="sub")   {
+				document.getElementById("box2").value=ressub;
+			  }    
+		     if(symbol=="*"){
+					
+	                       document.getElementById("symbol").value="multi";
+                          } 
+		     if(o=="multi") {
+				document.getElementById("box2").value=resmulti;
+			  }    
+		     if(symbol=="/"){
+					
+	                       document.getElementById("symbol").value="div";
+                          }
+		     if(o=="div")   {
+				document.getElementById("box2").value=resdiv;
+		   	  }   
+
+	             var h=document.getElementById("box2").value;
+		     document.getElementById("num1").value=h;          
+                   }
+
+
+		function zerofunction(C)
+		  {
+		     var y=0;
+		     var j="";
+		     document.getElementById("box1").value=j;
+		     document.getElementById("box2").value=y;
+		     document.getElementById("num1").value=j;
+		     document.getElementById("symbol").value=j;
+		     document.getElementById("num2").value=j;	
+		   }
+
+
+		function equaltofunction(equal)
+			{ 
+		     var i=document.getElementById("symbol").value;
+                     var number1=parseInt(document.getElementById("num1").value);
+                     var number2=parseInt(document.getElementById("num2").value);
+                     var ans=number1+number2;
+		     var anss=number1*number2;
+		     var ansss=number1-number2;
+		     var anssss=number1/number2;
+                       //alert("ans");
+		     if(i=="add"){
+		                document.getElementById("box2").value=ans;
+		           }
+		     if(i=="multi"){
+				document.getElementById("box2").value=anss;
+			   }
+		     if(i=="sub"){
+				document.getElementById("box2").value=ansss;
+			   }
+		     if(i=="div"){
+				document.getElementById("box2").value=anssss;
+			   }
+		         }  
+                     
+                   
+		          
+		   
+
+		
+
+
+
+	</script>
+
+
+     </body>
+     </html>
